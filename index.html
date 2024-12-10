@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Greeting Page -->
+  <div id="greetingPage">
+    <h1>Track Your Expenses Like Never Before</h1>
+    <p>Take control of your finances with our powerful Expense Tracker application.</p>
+    <button id="getStartedButton">Get Started</button>
+  </div>
+
+  <!-- Authentication Section -->
+  <div id="authSection" class="hidden">
+    <div id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button id="loginButton">Login</button>
+      <p>Don't have an account? <button id="goToRegister">Register</button></p>
+    </div>
+
+    <div id="registerForm" class="hidden">
+      <h2>Register</h2>
+      <input type="text" id="registerUsername" placeholder="Username">
+      <input type="email" id="registerEmail" placeholder="Email">
+      <input type="password" id="registerPassword" placeholder="Password">
+      <button id="registerButton">Register</button>
+      <p>Already have an account? <button id="goToLogin">Login</button></p>
+    </div>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="app" class="hidden">
+    <nav>
+      <button id="dashboardTab">Dashboard</button>
+      <button id="manageExpensesTab">Manage Expenses</button>
+      <button id="manageBudgetsTab">Manage Budgets</button>
+    </nav>
+
+    <!-- Dashboard -->
+    <div id="dashboardSection">
+      <h2>Welcome to your Dashboard!</h2>
+      <div class="stats">
+        <p>Current Budget: $<span id="currentBudget">0</span></p>
+        <p>Remaining Budget: $<span id="remainingBudget">0</span></p>
+        <!-- Example for displaying the Budget Spent -->
+        <p><strong>Budget Spent:</strong> $<span id="budgetSpent">500</span> </p>
+
+      </div>
+      <canvas id="expenseChart"></canvas>
+    </div>
+
+    <!-- Manage Expenses -->
+    <div id="manageExpensesSection" class="hidden">
+      <h2>Manage Expenses</h2>
+      <form id="expenseForm">
+        <input type="text" id="expenseCategory" placeholder="Category">
+        <input type="number" id="expenseAmount" placeholder="Amount">
+        <input type="date" id="expenseDate">
+        <button type="submit">Add Expense</button>
+      </form>
+      <table id="expenseTable">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Manage Budgets -->
+    <div id="manageBudgetsSection" class="hidden">
+      <h2>Manage Budgets</h2>
+      <form id="budgetForm">
+        <input type="number" id="monthlyIncome" placeholder="Monthly Income">
+        <input type="date" id="startDate">
+        <input type="date" id="endDate">
+        <button type="submit">Create Budget</button>
+      </form>
+      <table id="budgetTable">
+        <thead>
+          <tr>
+            <th>Monthly Income</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
