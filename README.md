@@ -12,3 +12,5 @@ CSS: Styling for a user-friendly and responsive design.
 JavaScript: Interactive and dynamic functionality.
 Chart.js: Pie chart
 
+Done by: Nyashadzashe Mugobo w69534, Aliyah Sanderson w71145
+
