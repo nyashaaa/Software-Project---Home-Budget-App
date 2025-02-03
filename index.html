@@ -7,14 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Greeting Page -->
   <div id="greetingPage">
     <h1>Track Your Expenses Like Never Before</h1>
-    <p>Take control of your finances with our powerful Expense Tracker application.</p>
+    <p>Take control of your finances with our powerful Home Budget application.</p>
     <button id="getStartedButton">Get Started</button>
   </div>
 
-  <!-- Authentication Section -->
   <div id="authSection" class="hidden">
     <div id="loginForm">
       <h2>Login</h2>
@@ -34,28 +32,25 @@
     </div>
   </div>
 
-  <!-- Dashboard Section -->
   <div id="app" class="hidden">
     <nav>
       <button id="dashboardTab">Dashboard</button>
       <button id="manageExpensesTab">Manage Expenses</button>
-      <button id="manageBudgetsTab">Manage Budgets</button>
+      <button id="manageIncomeTab">Manage Income</button>
     </nav>
 
-    <!-- Dashboard -->
     <div id="dashboardSection">
-      <h2>Welcome to your Dashboard!</h2>
+      <h2 id="welcomeMessage">Welcome to your Dashboard!</h2>
       <div class="stats">
         <p>Current Budget: $<span id="currentBudget">0</span></p>
         <p>Remaining Budget: $<span id="remainingBudget">0</span></p>
-        <!-- Example for displaying the Budget Spent -->
-        <p><strong>Budget Spent:</strong> $<span id="budgetSpent">500</span> </p>
-
+        <p><strong>Budget Spent: $</strong><span id="budgetSpent">0</span> </p>
       </div>
       <canvas id="expenseChart"></canvas>
+      <p id="highestExpense"></p>
     </div>
 
-    <!-- Manage Expenses -->
+
     <div id="manageExpensesSection" class="hidden">
       <h2>Manage Expenses</h2>
       <form id="expenseForm">
@@ -77,21 +72,21 @@
       </table>
     </div>
 
-    <!-- Manage Budgets -->
-    <div id="manageBudgetsSection" class="hidden">
-      <h2>Manage Budgets</h2>
-      <form id="budgetForm">
-        <input type="number" id="monthlyIncome" placeholder="Monthly Income">
-        <input type="date" id="startDate">
-        <input type="date" id="endDate">
-        <button type="submit">Create Budget</button>
+    <div id="manageIncomeSection" class="hidden">
+      <h2>Manage Income</h2>
+      <form id="incomeForm">
+        <input type="text" id="incomeCategory" placeholder="Category">
+        <input type="number" id="incomeAmount" placeholder="Amount">
+        <input type="date" id="incomeDate">
+        <button type="submit">Add Income</button>
       </form>
-      <table id="budgetTable">
+      <table id="incomeTable">
         <thead>
           <tr>
-            <th>Monthly Income</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody></tbody>
