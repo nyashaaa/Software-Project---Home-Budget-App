@@ -1,6 +1,19 @@
-/* General Body Styling */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('font/Gilroy-Regular.woff') format('woff');
+  font-weight: bold;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Gilroy Bold';
+  src: url('font/Gilroy-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+} 
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Gilroy';
   background: #f9f9f9;
   color: #333;
   padding: 0;
@@ -12,8 +25,9 @@ body {
   height: 100vh;
 }
 
-/* Button Styling */
+
 button {
+  font-family: 'Gilroy';
   padding: 10px 20px;
   background-color: #d17abe;
   color: white;
@@ -28,7 +42,7 @@ button:hover {
   background-color: #811f67;
 }
 
-/* Centered Sections */
+
 .hidden {
   display: none;
 }
@@ -44,7 +58,7 @@ button:hover {
   margin: 0 auto;
 }
 
-/* Input Styling */
+
 input {
   width: 100%;
   padding: 12px;
@@ -52,9 +66,10 @@ input {
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  font-family: 'Gilroy';
 }
 
-/* Center Titles */
+
 h1,
 h2 {
   text-align: center;
@@ -80,7 +95,7 @@ p {
   cursor: pointer;
 }
 
-/* Navigation Styling */
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -100,10 +115,14 @@ nav button:hover {
   color: white;
 }
 
-/* Stats Section */
+
 .stats {
   text-align: center;
   margin: 20px 0;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .stats p {
@@ -111,9 +130,9 @@ nav button:hover {
   margin: 10px 0;
 }
 
-/* Table Styling */
+
 #expenseTable,
-#budgetTable {
+#incomeTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -145,13 +164,7 @@ table td button:hover {
   background-color: #811f67;
 }
 
-/* Chart Styling */
-canvas {
-  max-width: 100%;
-  margin: 20px auto;
-}
 
-/* Greeting Page Styling */
 #greetingPage {
   text-align: center;
   background: white;
@@ -179,7 +192,7 @@ canvas {
   font-size: 1rem;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   #authSection,
   #app {
@@ -195,3 +208,5 @@ canvas {
     font-size: 1.5rem;
   }
 }
+
+
