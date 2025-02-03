@@ -95,6 +95,12 @@ document.getElementById("loginButton").addEventListener("click", (e) => {
   }
 });
 
+document.getElementById("logout").addEventListener("click", function() {
+  localStorage.removeItem("userToken"); 
+  window.location.href = "index.html";
+});
+
+
 function showTab(tabName) {
   const sections = {
     dashboard: "dashboardSection",
@@ -221,3 +227,30 @@ function setWelcomeMessage() {
     document.getElementById("welcomeMessage").textContent = `Welcome, ${currentUser.username} to your Dashboard!`;
   }
 }
+
+document.getElementById("download-summary").addEventListener("click", function() {
+    const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
+    const totalIncome = income.reduce((sum, i) => sum + i.amount, 0);
+    const remaining = totalIncome - totalExpenses;
+
+    let summaryText = `
+    Expense & Income Summary
+    -------------------------
+    Total Income: $${totalIncome.toFixed(2)}
+    Total Expenses: $${totalExpenses.toFixed(2)}
+    Remaining Balance: $${remaining.toFixed(2)}
+    `;
+
+
+  let blob = new Blob([summaryText], { type: "text/plain" });
+
+
+  let link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "Expense_Summary.txt"; 
+
+  
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
